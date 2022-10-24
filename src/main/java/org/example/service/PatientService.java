@@ -13,7 +13,7 @@ public class PatientService {
         this.repository = repository;
     }
 
-    public List<Patient> WriteOutAllPatientDetails() {
+    public List<Patient> listAllPatientDetails() {
         return repository.listAllPatients();
     }
 
@@ -25,8 +25,8 @@ public class PatientService {
         return repository.listPatientsOlderThanGivenAge(age);
     }
 
-    public List<Patient> listPatientsFromGivenBirthPlace() {
-        return repository.listPatientsFromGivenBirthPlace();
+    public List<Patient> listPatientsFromGivenBirthPlace(String birthPlace) {
+        return repository.listPatientsFromGivenBirthPlace(birthPlace);
     }
 
     public List<Patient> listPatientsWhoHasWrongAgeGiven() {

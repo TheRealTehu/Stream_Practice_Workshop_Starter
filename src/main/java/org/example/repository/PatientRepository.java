@@ -26,7 +26,7 @@ public class PatientRepository {
         return null;
     }
 
-    public List<Patient> listPatientsFromGivenBirthPlace(){
+    public List<Patient> listPatientsFromGivenBirthPlace(String birthPlace){
         //TODO
         return null;
     }
