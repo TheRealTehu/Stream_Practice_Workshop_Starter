@@ -3,6 +3,7 @@ package org.example.model;
 import org.example.model.enums.Gender;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Patient {
     private String firstName;
@@ -100,5 +101,23 @@ public class Patient {
 
     public void setNumberOfHighPriorityProblems(int numberOfHighPriorityProblems) {
         this.numberOfHighPriorityProblems = numberOfHighPriorityProblems;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Patient patient = (Patient) o;
+        return age == patient.age && numberOfLowPriorityProblems == patient.numberOfLowPriorityProblems
+                && numberOfMediumPriorityProblems == patient.numberOfMediumPriorityProblems
+                && numberOfHighPriorityProblems == patient.numberOfHighPriorityProblems
+                && Objects.equals(firstName, patient.firstName) && Objects.equals(lastName, patient.lastName)
+                && gender == patient.gender && Objects.equals(birthPlace, patient.birthPlace)
+                && Objects.equals(dateOfBirth, patient.dateOfBirth);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, age, gender, birthPlace, dateOfBirth, numberOfLowPriorityProblems, numberOfMediumPriorityProblems, numberOfHighPriorityProblems);
     }
 }

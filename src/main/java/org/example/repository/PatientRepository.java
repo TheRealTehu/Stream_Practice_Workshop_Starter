@@ -12,8 +12,7 @@ public class PatientRepository {
     }
 
     public List<Patient> listAllPatients(){
-        //TODO
-        return null;
+        return patients;
     }
 
     public List<Patient> listPatientsOlderThan30(){
