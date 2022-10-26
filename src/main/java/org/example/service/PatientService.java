@@ -5,6 +5,7 @@ import org.example.model.dto.PatientDTO;
 import org.example.repository.PatientRepository;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PatientService {
     private PatientRepository repository;
@@ -43,6 +44,6 @@ public class PatientService {
 
     public List<PatientDTO> listTopTenPatientsBasedOnPriorityScore() {
         //TODO: Create PatientDTO list from Patient list
-        return null;
+        return repository.listTopTenPatientsBasedOnPriorityScore().stream().map(PatientDTO::new).collect(Collectors.toList());
     }
 }

@@ -103,6 +103,10 @@ public class Patient {
         this.numberOfHighPriorityProblems = numberOfHighPriorityProblems;
     }
 
+    public double getPatientScore(){
+        return numberOfLowPriorityProblems* 0.9 + numberOfMediumPriorityProblems * 1.1 + numberOfHighPriorityProblems * 1.5;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -119,5 +123,20 @@ public class Patient {
     @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName, age, gender, birthPlace, dateOfBirth, numberOfLowPriorityProblems, numberOfMediumPriorityProblems, numberOfHighPriorityProblems);
+    }
+
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", gender=" + gender +
+                ", birthPlace='" + birthPlace + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", numberOfLowPriorityProblems=" + numberOfLowPriorityProblems +
+                ", numberOfMediumPriorityProblems=" + numberOfMediumPriorityProblems +
+                ", numberOfHighPriorityProblems=" + numberOfHighPriorityProblems +
+                '}';
     }
 }
